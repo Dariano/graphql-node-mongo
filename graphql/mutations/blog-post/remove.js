@@ -1,11 +1,11 @@
 const {GraphQLNonNull, GraphQLID} = require('graphql')
-const blogPost = require('../../types/blog-post');
-const blogPost = require('../../../models/blog-post');
+const blogPostType = require('../../types/blog-post');
+const BlogPostModel = require('../../../models/blog-post');
 const getProjection = require('../../get-projection');
 
 
 module.exports = {
-    type: blogPost,
+    type: blogPostType,
     args: {
         _id: {
             name: '_id',
@@ -14,7 +14,7 @@ module.exports = {
     },
     async resolve: (root, params, options) => {
         const projection = getProjection(options.fieldASTs[0])
-        const removedBlogPost = await blogPost.findByIdRemove(params._id,  {
+        const removedBlogPost = await BlogPostModel.findByIdRemove(params._id,  {
             select: projection
         })
         .exec()

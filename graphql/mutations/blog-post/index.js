@@ -1,9 +1,9 @@
-const add = require('./add');
-const removeAll = require('./remove-all');
-const remove = require('./remove');
+const addBlogPost = require('./add');
+const removeAllBlogPosts = require('./remove-all');
+const removeBlogPost = require('./remove');
 
 module.exports = {
-    add,
-    removeAll,
-    remove
+    addBlogPost,
+    removeAllBlogPosts,
+    removeBlogPost
 }

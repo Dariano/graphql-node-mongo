@@ -1,10 +1,10 @@
 const { GraphQLBoolean } = require('graphql')
 
-const comment = require('../../../models/comment');
+const CommentModel = require('../../../models/comment');
 
 module.exports = {
     type: GraphQLBoolean,
     resolve: (root, params, options) => {
-        return comment.remove().exec()
+        return CommentModel.remove().exec()
     }
 }

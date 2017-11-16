@@ -1,10 +1,10 @@
-const add = require('./add');
-const removeAll = require('./remove-all');
-const remove = require('./remove');
+const addComment = require('./add');
+const removeAllComments = require('./remove-all');
+const removeComment = require('./remove');
 
 
 module.exports = {
-    add,
-    remove,
-    removeAll
+    addComment,
+    removeAllComments,
+    removeComment
 }

@@ -1,7 +1,7 @@
 const { GraphQLNonNull, GraphQLID } = require('graphql')
 const commentType = require('../../types/comment');
 const getProjection = require('../../get-projection');
-const comment = require('../../../models/comment');
+const CommentModel = require('../../../models/comment');
 
 module.exports = {
     type: commentType,
@@ -11,17 +11,18 @@ module.exports = {
             type: new GraphQLNonNull(GraphQLID)
         }
     },
-    resolve: (root, params, options) => {
-        const projection = getProjection(options.fieldASTs[0])
-        const removedComment = await comment
+    async resolve(root, params, options) {
+        const projection = getProjection(options.fieldASTs[0]);
+        const removedComment = await CommentModel
             .findByIdAndRemove(params._id, {
                 select: projection
             })
-            .exec()
+            .exec();
 
-        if (!removedComment) throw new Error('Error removing blog post')
+        if (!removedComment) {
+            throw new Error('Error removing blog post');
+        }
 
         return removedComment;
-
     }
 }

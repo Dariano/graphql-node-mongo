@@ -1,6 +1,6 @@
 const { GraphQLNonNull, GraphQLBoolean} = require('graphql')
-const blogPostInput = require('../../types/blog-post-input');
-const blogPost = require('../../../models/blog-post')
+const blogPostInputType = require('../../types/blog-post-input');
+const BlogPostModel = require('../../../models/blog-post')
 
 
 module.exports = {
@@ -8,11 +8,11 @@ module.exports = {
     args: {
         data: {
             nome: 'data',
-            type: new GraphQLNonNull(blogPostInput)
+            type: new GraphQLNonNull(blogPostInputType)
         }
     },
     async resolve: (root, params, options) => {
-        const blogPostModel = new blogPostModel(params.data)
+        const blogPostModel = new BlogPostModel(params.data)
         const newBlogPost = await blogPostModel.save()
 
         if(!newBlogPost) throw new Error('Erro ao adicionar novo blog post')
