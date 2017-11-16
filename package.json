@@ -1,0 +1,27 @@
+{
+  "name": "graphql-node-mongo",
+  "version": "1.0.0",
+  "description": "Primeiro vamos instalar as dependências que iremos utilizar em nossa aplicação",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
+    "mongoose": "^4.13.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dariano/graphql-node-mongo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dariano/graphql-node-mongo/issues"
+  },
+  "homepage": "https://github.com/Dariano/graphql-node-mongo#readme"
+}

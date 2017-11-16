@@ -4,6 +4,6 @@ Primeiro vamos instalar as dependências que iremos utilizar em nossa aplicaçã
 
 > npm i express express-graphql mongoose -S
 
-Crie uma arquivo chamado app.js onde ficará nosso servidor
+Crie uma arquivo chamado app.js em que iniciar o Servidor, conectará ao banco Mongodb e criará um Graphql
 
 > touch app.js
