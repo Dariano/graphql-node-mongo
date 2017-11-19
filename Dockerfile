@@ -1,6 +1,6 @@
 FROM node:8.9.0
 
-EXPOSE 8080
+EXPOSE 3000
 
 RUN mkdir /app
 WORKDIR /app

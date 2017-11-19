@@ -12,6 +12,6 @@ app.use('/graphql', graphqlHTTP(req => ({
     graphql: true
 })))
 
-mongoose.connect('mongodb://mongo/graphql')
+mongoose.connect('mongodb://localhost:27017/graphql')
 
-app.listen(8080, () => console.log('Servidor rodando na porta 8080'))
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'))

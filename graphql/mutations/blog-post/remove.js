@@ -12,7 +12,7 @@ module.exports = {
             type: new GraphQLNonNull(GraphQLID)
         }
     },
-    async resolve: (root, params, options) => {
+    async resolve(root, params, options) {
         const projection = getProjection(options.fieldASTs[0])
         const removedBlogPost = await BlogPostModel.findByIdRemove(params._id,  {
             select: projection

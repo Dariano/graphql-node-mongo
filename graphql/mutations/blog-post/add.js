@@ -11,7 +11,7 @@ module.exports = {
             type: new GraphQLNonNull(blogPostInputType)
         }
     },
-    async resolve: (root, params, options) => {
+    async resolve(root, params, options) {
         const blogPostModel = new BlogPostModel(params.data)
         const newBlogPost = await blogPostModel.save()
 

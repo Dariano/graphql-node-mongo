@@ -7,10 +7,10 @@ module.exports = {
     args: {
         data: {
             name: 'data',
-            type: GraphQLNonNull(commentInputType)
+            type: new GraphQLNonNull(commentInputType)
         }
     },
-    async resolve: (root, params, options) => {
+    async resolve(root, params, options) {
         const commentModel = new CommentModel(params.data)
         const newComment = await comment.save()
 
